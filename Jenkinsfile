@@ -1,8 +1,10 @@
 pipeline {
     agent any
+
     tools{
         maven 'maven_3_9_6'
     }
+
     stages {
         stage('Build Maven') {
             steps {
@@ -25,6 +27,13 @@ pipeline {
                 sh 'docker login -u hzait -p ${dockerPassword}'
                 sh 'docker push hzait/devops-integration'
                 }
+                }
+            }
+        }
+          stage('Deploy to k8s') {
+            steps {
+                script{
+                  kubernetesDeploy (configs: 'deployment.yaml' , kubeconfigId: 'k8s-Config-pwd')
                 }
             }
         }
