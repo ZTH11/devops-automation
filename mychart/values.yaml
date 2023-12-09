@@ -96,3 +96,10 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+controller:
+  installPlugins:
+    - configuration-as-code:latest
+    - kubernetes:latest
+    - workflow-aggregator:latest
+    - git:latest
