@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.0.5</version>
+        <version>3.2.0</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.example</groupId>
@@ -50,7 +50,8 @@
     </dependencies>
 
     <build>
-        <plugins>
+        <pluginManagement>
+            <plugins>
                 <plugin>
                     <groupId>org.springframework.boot</groupId>
                     <artifactId>spring-boot-maven-plugin</artifactId>
@@ -63,13 +64,10 @@
                         </excludes>
                     </configuration>
                 </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.2</version>
-            </plugin>
-            </plugins>
-            <finalName>devops-integration</finalName>
-        </build>
 
-    </project>
+            </plugins>
+        </pluginManagement>
+        <finalName>devops-integration</finalName>
+    </build>
+
+</project>
