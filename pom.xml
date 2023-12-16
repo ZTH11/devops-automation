@@ -51,7 +51,7 @@
 
     <build>
         <pluginManagement>
-            <plugins>
+        <plugins>
                 <plugin>
                     <groupId>org.springframework.boot</groupId>
                     <artifactId>spring-boot-maven-plugin</artifactId>
@@ -64,10 +64,13 @@
                         </excludes>
                     </configuration>
                 </plugin>
-
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+            </plugin>
             </plugins>
         </pluginManagement>
-        <finalName>devops-integration</finalName>
-    </build>
+            <finalName>devops-integration</finalName>
+        </build>
 
-</project>
+    </project>
